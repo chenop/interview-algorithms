@@ -4,8 +4,21 @@ package Trees;
  * Created by Chen on 06/03/2016.
  */
 public class BinaryTree {
-    public static void main(String[] args) {
 
+    public void insert(TreeNode node, int data) {
+        if ((int) node.data > data) {
+            if (node.right == null)
+                node.right = new TreeNode(data);
+
+            insert(node.right, data);
+        }
+
+        if ((int) node.data <= data) {
+            if (node.left == null)
+                node.left = new TreeNode(data);
+
+            insert(node.left, data);
+        }
     }
 
     public void inOrder(TreeNode treeNode) {

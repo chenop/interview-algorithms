@@ -1,5 +1,7 @@
 package sort;
 
+import sun.misc.Sort;
+
 import java.util.Arrays;
 
 /**
@@ -9,7 +11,7 @@ public class MergeSort {
     public static void main(String[] argv) {
         Integer[] array = SortUtils.createMockArray();
 
-        System.out.println(mergeSort(array));
+        SortUtils.printArray(mergeSort(array));
     }
 
     private static Integer[] mergeSort(Integer[] array) {
@@ -17,8 +19,8 @@ public class MergeSort {
         if (length <= 1)
             return array;
 
-        Integer[] leftArray = mergeSort(Arrays.copyOfRange(array, 0, length / 2 - 1  ));
-        Integer[] rightArray = mergeSort(Arrays.copyOfRange(array, length / 2 , length ));
+        Integer[] leftArray = mergeSort(Arrays.copyOfRange(array, 0, length / 2 ));
+        Integer[] rightArray = mergeSort(Arrays.copyOfRange(array, leftArray.length , length));
 
         return merge(leftArray, rightArray);
     }
@@ -29,7 +31,15 @@ public class MergeSort {
         int l = 0, r = 0, j = 0;
 
         while ( l < leftArray.length || r < rightArray.length) {
-            if (leftArray[l] < rightArray[r]) {
+            if (r >= rightArray.length) {
+                merged[j] = leftArray[l];
+                l++;
+            }
+            else if (l >= leftArray.length) {
+                merged[j] = rightArray[r];
+                r++;
+            }
+            else if (leftArray[l] < rightArray[r]) {
                 merged[j] = leftArray[l];
                 l++;
             }

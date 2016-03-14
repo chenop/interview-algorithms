@@ -1,7 +1,5 @@
 package sort;
 
-import sun.misc.Sort;
-
 import java.util.Arrays;
 
 /**

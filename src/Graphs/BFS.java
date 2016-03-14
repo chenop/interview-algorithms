@@ -1,7 +1,7 @@
-package Graphs;
+package graphs;
 
-import Trees.TreeMockHelper;
-import Trees.TreeNode;
+import trees.TreeMockHelper;
+import trees.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

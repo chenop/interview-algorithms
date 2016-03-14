@@ -1,7 +1,6 @@
-package Graphs;
+package graphs;
 
-import Trees.TreeMockHelper;
-import Trees.TreeNode;
+import trees.TreeNode;
 
 /**
  * Created by Chen.Oppenhaim on 3/7/2016.

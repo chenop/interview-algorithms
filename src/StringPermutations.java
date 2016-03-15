@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * Created by Chen on 13/03/2016.
  *
@@ -9,34 +7,20 @@ public class StringPermutations {
     public static void main(String[] args) {
         String[] str = new String[]{"a", "b", "c", "d"};
 
-        calcPermutations(str);
+        calcPermutations(str, "");
     }
 
-    private static void calcPermutations(String[] str) {
-        if (str.length == 1) {
-            System.out.println(str[0]);
+    private static void calcPermutations(String[] str, String prefix) {
+        if (prefix.length() == str.length) {
+            System.out.println(prefix);
             return;
         }
 
         for (int i = 0; i < str.length; i++) {
-            System.out.print(str[i]);
-            swap(str, 0, i);
-            String[] newStr = Arrays.copyOfRange(str, 1, str.length);
-            // TODO need to pass the whole string...
-            calcPermutations(newStr);
+            String s = str[i];
+
+            String newPrefix = prefix + s;
+            calcPermutations(str, newPrefix);
         }
-
     }
-
-    private static void swap(String[] str, int index, int randomizeIndex) {
-        String tmp = str[randomizeIndex];
-        str[randomizeIndex] = str[index];
-        str[index] = tmp;
-    }
-
-    private static int randomizeIndex(int n) {
-        double random = Math.random();
-        return (int) Math.floor (random * n);
-    }
-
 }

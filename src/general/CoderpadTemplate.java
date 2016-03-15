@@ -5,7 +5,7 @@ package general;
  */
 public class CoderpadTemplate {
 
-//	public static class Solution {
+	public static class Solution {
 //		public static void main(String[] argv) {
 //			JUnitCore.main("Solution");
 //		}
@@ -18,5 +18,5 @@ public class CoderpadTemplate {
 //		public void test1() {
 //			Assert.assertEquals(doStuff(), 5);
 //		}
-//	}
+	}
 }

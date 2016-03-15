@@ -13,7 +13,7 @@ public class BFS {
 	public static void main(String[] args) {
 		TreeNode tree = TreeMockHelper.createTree();
 
-		doBFS(tree, new IVisitor() {
+		doBFS(tree, new graphs.IVisitor() {
 
 			@Override
 			public void visit(TreeNode node) {

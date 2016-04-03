@@ -15,7 +15,6 @@ public class BFS {
 
 		doBFS(tree, new graphs.IVisitor() {
 
-			@Override
 			public void visit(TreeNode node) {
 				if (node == null)
 					return;
